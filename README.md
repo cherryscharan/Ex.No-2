@@ -35,8 +35,8 @@
 7.	Compile that file with C compiler and verify the output.
 
 ## PROGRAM 
-
-'''#include <stdio.h>
+`` 
+#include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 
@@ -77,7 +77,8 @@ int main() {
     }
 
     return 0;
-}'''
+}
+```
 
 ## INPUT:
 if (a == 10) {b = b
