@@ -35,7 +35,7 @@
 7.	Compile that file with C compiler and verify the output.
 
 ## PROGRAM 
-`` 
+``` 
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
