@@ -1,7 +1,7 @@
 # Ex.No :2
 # GENERATION OF LEXICAL TOKENS USING LEX/FLEX TOOL
-## Register Number:
-## Date:
+## Register Number:212223220015
+## Date:9/19/2025
 ## AIM
  To write a lex program to implement lexical analyzer to recognize a few patterns.
 ## ALGORITHM
@@ -35,8 +35,53 @@
 7.	Compile that file with C compiler and verify the output.
 
 ## PROGRAM:
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int isKeyword(char buffer[]) {
+    char keywords[5][10] = {"if", "else", "while", "for", "int"};
+    for (int i = 0; i < 5; ++i) {
+        if (strcmp(buffer, keywords[i]) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int main() {
+    char ch, buffer[15];
+    char operators[] = "+-*/=";
+    int i = 0;
+
+    printf("Enter your input: ");
+    
+    while ((ch = getchar()) != EOF) {
+        if (strchr(operators, ch)) {
+            printf("Operator: %c\n", ch);
+        } else if (isalnum(ch)) {
+            buffer[i++] = ch;
+        } else if ((ch == ' ' || ch == '\n' || ch == '\t') && i != 0) {
+            buffer[i] = '\0';
+
+            if (isKeyword(buffer)) {
+                printf("Keyword: %s\n", buffer);
+            } else if (isdigit(buffer[0])) {
+                printf("Number: %s\n", buffer);
+            } else {
+                printf("Identifier: %s\n", buffer);
+            }
+            i = 0;
+        }
+    }
+
+    return 0;
+}
 
 ## INPUT:
+if (a == 10) {b = b
 ## OUTPUT:
+<img width="908" height="755" alt="Screenshot 2025-09-09 135811" src="https://github.com/user-attachments/assets/30a2e85c-41c5-441b-8c4e-051ba26af327" />
+
 ## RESULT:
  The lexical analyzer is implemented using lex and the output is verified.
