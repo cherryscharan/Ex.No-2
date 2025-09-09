@@ -35,10 +35,10 @@
 7.	Compile that file with C compiler and verify the output.
 
 ## PROGRAM:
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-
 int isKeyword(char buffer[]) {
     char keywords[5][10] = {"if", "else", "while", "for", "int"};
     for (int i = 0; i < 5; ++i) {
