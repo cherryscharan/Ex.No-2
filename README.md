@@ -34,7 +34,8 @@
 6.	Compile the lex program with lex compiler to produce output file as lex.yy.c. eg $ lex filename.l $ cc lex.yy.c
 7.	Compile that file with C compiler and verify the output.
 
-## PROGRAM:
+## PROGRAM 
+
 '''#include <stdio.h>
 #include <ctype.h>
 #include <string.h>
